@@ -1,0 +1,53 @@
+---
+title: "Assignment3 Report"
+author: "Penny Cao"
+date: "2/25/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(maps)
+library(mapproj)
+knitr::opts_chunk$set(echo = TRUE)
+source("Analysis.R")
+```
+
+## Introduction
+
+The data set records incarceration at the county level and includes data on gender, race, age and other characteristics of the jail and prison population. Unlike traditional state-level data sets, this project is a more detailed analysis of local data, with the goal of helping county officials determine how communities can best use incarceration. The variable I focus on for this report is the population count for jails in the most recent year. The state that has the highest jail population is `r max_state` while `r max_b_state` has the highest black jail population. The proportion of black population in the total jail population in 2018 is `r prop_b`. When comparing the proportion of whites and blacks in the total jail population, the result is that whites population is `r ratio_b_to_w` times of black population. A good news is that the change in total jail population from 2017 to 2018 is `r diff_total`, with the negative sign meaning a decline in the jail population. 
+
+
+## Trends Chart
+
+The graph below was made in order to investigate the trend pattern of jail population through a long time period as well the comparison between different races. Based on the graph, we can find that white, black and latinx are the three major component of the jail population. The proportion of native american, Asian american and pacific island populations are too small to recognize. For the development trends, latinx, native american and aapi population have remained fairly stable with no significant change. Black population shows a noticable decreade in population from 2020 to 2018 while white population slightly increased. 
+
+```{r}
+trend_chart
+```
+
+## Comparison Chart
+
+Juvenile are the most direct reflection of a country's educational level, so trends in the number of juvenile in jail can help us analyze and improve the quality of education. At the same time, the comparison between gender shown in the graph can help the community be more targeted to intervene in the education of teenagers, thus reducing the crime rate. In the graph, we can see that the total juvenile jail population shows a trend of gradual decline, especially between 2010 and 2015. Besides that, the population of male is significantly larger than the female population. The proportion of male juvenile even increased in 2015 compared with 2000. This indicates that even though the total juvenile jail population decreased, the proportion of male juveniles in jail has increased, indicating that the community needs to pay more attention to the education of male juveniles in the future.
+
+```{r}
+comparison_chart
+```
+
+## Map
+
+The map below shows the distribution of jail populations by state. The map can clearly show where the largest jail populations are, helping government agencies plan improvements to those areas. The jail population is represented by the shade of color, which can more intuitively highlight the most serious states and attract audience's attention. According to the map, the jail populations in the U.S are small at the central and northern area, and are growing from the center to outer. California has the highest jail population and is significantly higher than other regions. Also, the West has more jail population than the East. 
+
+```{r}
+map
+```
+
+
+
+
+
+
+
